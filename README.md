@@ -42,7 +42,7 @@ This section covers how to start the development server and build your project f
 To start the development server with hot-reload, run the following command. The server will be accessible at [http://localhost:3000](http://localhost:3000):
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 (Repeat for npm, pnpm, and bun with respective commands.)
@@ -54,7 +54,7 @@ yarn dev
 To build your project for production, use:
 
 ```bash
-yarn build
+npm run build
 ```
 
 (Repeat for npm, pnpm, and bun with respective commands.)
