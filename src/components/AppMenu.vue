@@ -5,13 +5,15 @@ import AppMenuItem from './AppMenuItem.vue';
 
 const model = ref([
     { text: 'Dashboard', icon: 'mdi-home', to: '/'},
-    { text: 'Shared with me', icon: 'mdi-account-multiple', to: '/documento' },
+    { text: 'Documento', icon: 'mdi-account-multiple', to: '/documento' },
     { text: 'Starred', icon: 'mdi-star' },
     { text: 'Recent', icon: 'mdi-history' },
     { text: 'Offline', icon: 'mdi-check-circle' },
     { text: 'Uploads', icon: 'mdi-upload' },
     { text: 'Backups', icon: 'mdi-cloud-upload' }
 ]);
+
+const activeItem = ref(false)
 </script>
 
 <template>
@@ -29,16 +31,17 @@ const model = ref([
 
         <v-divider></v-divider>
 
-        <v-list :lines="false" density="default" active nav>
+        <v-list lines="false" nav>
           <v-list-item
             v-for="(item, i) in model"
             :key="i"
             :value="item"
             rounded
-            ripple="true"
-            color="primary"
+            :ripple="true"
+            :active="false"
+            :to="item.to"
             >
-            <!-- :to="item.to" -->
+            <!-- color="primary" -->
           <template v-slot:prepend>
               <v-icon :icon="item.icon"></v-icon>
             </template>

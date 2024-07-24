@@ -21,8 +21,8 @@ const menuItems = ref([
         <v-spacer></v-spacer>
 
         <template v-if="$vuetify.display.mdAndUp" #append>
-          <v-btn icon="mdi-magnify" ripple="true"></v-btn>
-          <v-btn icon class="mr-4" ripple="true">
+          <v-btn icon="mdi-magnify" :ripple="true"></v-btn>
+          <v-btn icon class="mr-4" :ripple="true">
             <v-badge dot color="error">
               <v-icon icon="mdi-bell-outline"></v-icon>
             </v-badge>
@@ -39,7 +39,7 @@ const menuItems = ref([
                 :key="index"
                 :value="index"
                 :prepend-icon="item.icon"
-                ripple="true"
+                :ripple="true"
               >
                 <v-list-item-title>{{ item.title }}</v-list-item-title>
               </v-list-item>
