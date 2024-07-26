@@ -16,9 +16,9 @@ const menuItems = ref([
     <v-app-bar color="blue-darken-4">
         <v-app-bar-nav-icon @click="toggleDrawerSidebar" variant="text"></v-app-bar-nav-icon>
 
-        <v-toolbar-title>Admin Template</v-toolbar-title>
+        <!-- <v-toolbar-title>Admin Template</v-toolbar-title> -->
 
-        <v-spacer></v-spacer>
+        <!-- <v-spacer></v-spacer> -->
 
         <template v-if="$vuetify.display.mdAndUp" #append>
           <v-btn icon="mdi-magnify" :ripple="true"></v-btn>
@@ -33,13 +33,14 @@ const menuItems = ref([
                 <v-img cover src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
               </v-avatar>
             </template>
-            <v-list :lines="false" density="compact" nav>
+            <v-list density="compact" nav>
               <v-list-item
                 v-for="(item, index) in menuItems"
                 :key="index"
                 :value="index"
                 :prepend-icon="item.icon"
-                :ripple="true"
+                :to="item.to"
+                :active="false"
               >
                 <v-list-item-title>{{ item.title }}</v-list-item-title>
               </v-list-item>
