@@ -12,17 +12,33 @@ import { setupLayouts } from "virtual:generated-layouts";
 const routes = [
   {
     path: "/",
+    redirect: "home",
     component: () => import("@/layouts/default.vue"),
     children: [
       {
-        path: "/",
-        name: "helloworld",
-        component: () => import("@/components/HelloWorld.vue"),
+        path: "home",
+        name: "home",
+        component: () => import("@/pages/index.vue"),
       },
       {
-        path: "/documento",
+        path: "documento",
         name: "documento",
         component: () => import("@/components/Documento.vue"),
+      },
+      {
+        path: "starred",
+        name: "starred",
+        component: () => import("@/components/Starred.vue"),
+      },
+      {
+        path: "recent",
+        name: "recent",
+        component: () => import("@/components/Recent.vue"),
+      },
+      {
+        path: "offline",
+        name: "offiline",
+        component: () => import("@/components/Recent.vue"),
       },
     ],
   },
